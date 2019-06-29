@@ -5,10 +5,103 @@
 <title>List des eleves inscrits</title>
 	<link rel="stylesheet" href="assets/cssDisp/bootstrap.min.css" th:href="@{/cssDisp/bootstrap.min.css}" />
 	<link rel="stylesheet" href="assets/cssDisp/mystyle.css" th:href="@{/cssDisp/mystyle.css}" />
+		  <link rel="stylesheet" href="assets/_menuAssets/menuCss/styles-merged.css">
+ <link rel="stylesheet" href="assets/_menuAssets/menuCss/style.min.css">
 </head>
 <body>
 
-	 <h4><th:block th:include="/menuAdmin"></th:block> </h4>
+	 <h4>
+
+
+ <div class="probootstrap-page-wrapper" xmlns:th="http://www.thymeleaf.org">
+   <nav class="navbar navbar-default probootstrap-navbar">
+
+       <div id="navbar-collapse" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav navbar-right">
+            
+              <li ><a th:href="@{/}">Page d'Acceuil</a></li>
+              
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Eleve</a>
+                <ul class="dropdown-menu">
+                 <li><a th:href="@{index}">Liste de tous les eleves inscrits</a>
+                  <li><a th:href="@{form}">Nouvelle Inscription</a></li>
+                  <li><a th:href="@{editSuppimer}">Modifier ou Supprimer une Inscription</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Mensualites</a>
+                <ul class="dropdown-menu">
+                 <li><a th:href="@{underConst}">Lister Tous Les Mensualites</a></li>
+                  <li><a th:href="@{underConst}">Paiyement Mensualites</a></li>
+                  <li><a th:href="@{underConst}">Modifier ou Supprimer une Mensualite</a></li>
+                </ul>
+              </li>
+   
+   			<li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Conduites</a>
+                <ul class="dropdown-menu">
+                 <li><a th:href="@{underConst}">Lister Tous Les Conduites</a></li>
+                  <li><a th:href="@{underConst}">Enregistrer Conduites</a></li>
+                  <li><a th:href="@{underConst}">Modifier ou Supprimer une Conduite</a></li>
+                </ul>
+              </li>
+   
+   			 <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Notes</a>
+                <ul class="dropdown-menu">
+                <li><a th:href="@{underConst}">Bulletin d'un Eleve</a></li>
+                <li><a th:href="@{underConst}">Editer les Note d'un Eleve</a></li>
+                 <li><a th:href="@{underConst}">Lister Tous Les Note</a></li>
+                 <li><a th:href="@{underConst}">Lister Tous Les Bulletins</a></li>
+                 <li><a th:href="@{underConst}">Inserer les Coefficints des Notes</a></li>
+                 <li><a th:href="@{underConst}">Editer les Coefficints des Notes</a></li>
+                 <!--  <li><a href="${pageContext.request.contextPath}/ServletModifierSupprimerNotes">Modifier ou Supprimer une Note</a></li> -->
+                </ul>
+              </li>
+   
+   
+           <li class="dropdown">
+           <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Enseignant</a>
+            <ul class="dropdown-menu">
+               <li><a th:href="@{underConst}">Liste des Enseignants</a></li>  
+               <li><a th:href="@{underConst}">Inserer un Nouveau Enseignants</a></li>
+               <li><a th:href="@{underConst}">Modifier Etat d'Enseignant</a></li>
+            </ul>
+   			</li>
+   			
+   			
+   			<li class="dropdown">
+           <a href="#" data-toggle="dropdown" class="dropdown-toggle active" >Utilisateurs</a>
+            <ul class="dropdown-menu">
+            	<li><a th:href="@{underConst}">Session Utilisateur</a></li>
+            	<li><a th:href="@{underConst}">Session Administrateur</a></li>
+               <li><a th:href="@{underConst}">Creer Utilisateur</a></li>
+               <li><a th:href="@{underConst}">Afficher les Utilisateurs</a></li>
+               <li><a th:href="@{underConst}">Modifier un Utilisateur</a></li>
+               <li><a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a></li>
+               
+            </ul>
+   			</li>
+   
+              <li><a th:href="@{underConst}">Contact</a></li>
+             
+               <li>
+              <form th:action="@{find}" method="get">             
+	              <input name="matricule" th:value=${motCle}> 
+	              <input type="submit" value="Search" class="alt"/>	               
+      		  </form>
+              
+              </li>
+            </ul>
+            
+            
+     </div>
+   </nav>
+
+
+	 </h4>
 
 	<h1>Liste de tous les Eleves inscrits</h1>
 	
@@ -63,6 +156,9 @@
 	</li>
 	</ul>
 	</div>
+	
+	<script src="assets/menuAssets/menuJs/scripts.min.js"></script>
+ <script src="assets/menuAssets/menuJs/main.min.js"></script>
 	
 </body>
 
