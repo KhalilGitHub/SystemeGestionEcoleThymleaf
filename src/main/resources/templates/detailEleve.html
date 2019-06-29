@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+
+		<title>Snapshot by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" href="assets/cssDisp/bootstrap.min.css" th:href="@{/cssDisp/bootstrap.min.css}" />
+		<link rel="stylesheet" href="assets/cssDisp/mystyle.css" th:href="@{/cssDisp/mystyle.css}" />
+		<link rel="stylesheet" href="assets/css/cssDetail/main.css" />
+	</head>
+	<body>
+	 <h4><th:block th:include="/menuAdmin"></th:block> </h4>
+
+		<div class="page-wrap">
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Banner -->
+						<section id="banner">
+							<div class="inner">
+								<h1>Systeme de getion des Etablissements</h1>
+							<h3>Pour Afficher les details d'un Eleve clicquer sur Continuer ou Annuler pour quitter</h3>
+								<ul class="actions">
+									<li><a href="#galleries" class="button alt scrolly big">Continuer</a></li>
+									<li><a class="button alt scrolly big">Annuler</a></li>
+
+								</ul>
+							</div>
+						</section>
+
+	<section id="galleries">
+
+									<div class="gallery">
+
+
+										<section class="wrapper style1">
+											<div class="inner">
+												
+
+												<section class="probootstrap-section">
+									        <div class="container">
+									        
+									        <div id="paraphPos"> <h3>Details d'un Eleve</h3> </div> 
+									        <div id="hrLign"><hr/>
+									        </div>
+												
+									
+							<div class="container">
+
+
+          <div class="row">
+            <div id="PrintOneEleve" class="col-md-3 col-sm-6">
+               <!-- Display   Eleve -->
+              <div id="containerDetail" class="probootstrap-teacher text-center probootstrap-animate">
+                <figure class="media">
+                 	 <img class="img-circle" th:src="@{getPhoto(id=${inscrip.idInscription})}" width="200px" height="200px"/>
+                </figure>   
+              <div class="text">
+              
+                  <h3 th:text="${inscrip.eleve.nom}"></h3>
+				   <h3 th:text="${inscrip.eleve.prenom}"></h3>
+                  <p th:text="${inscrip.matricule}"></p>
+                  <p th:text="${inscrip.eleve.genre}"></p>
+                  <p th:text="${inscrip.eleve.adresse}"></p>
+                  <p th:text="${inscrip.eleve.age}"></p>
+                  <p th:text="${inscrip.eleve.classe}"></p>
+                  <p th:text="${inscrip.frais}"></p>
+                  <p th:text="${inscrip.date}"></p>
+				  <p th:text="${inscrip.annee}"></p>
+                   
+                  
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+        <div> </div>
+        
+ 
+  
+
+										<hr class="affich"/>
+<a class="link" href="#" >Debut de la Page</a>
+										</div>
+								</section>
+						</section>
+					<!-- Contact -->
+
+		</div>
+
+		<!-- Scripts
+
+		-->
+		
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		  <script src="assets/js/jquery.poptrox.min.js"></script>
+
+
+
+
+
+
+	</body>
+</html>

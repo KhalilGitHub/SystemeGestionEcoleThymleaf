@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+
+		<title>Snapshot by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" href="assets/cssDisp/bootstrap.min.css" th:href="@{/cssDisp/bootstrap.min.css}" />
+		<link rel="stylesheet" href="assets/cssDisp/mystyle.css" th:href="@{/cssDisp/mystyle.css}" />
+		<link rel="stylesheet" href="assets/css/cssInscrip/main.css" />
+	</head>
+	<body>
+	 <h4><th:block th:include="/menuAdmin"></th:block> </h4>
+
+		<div class="page-wrap">
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Banner -->
+						<section id="banner">
+							<div class="inner">
+								<h1>Systeme de getion des Etablissement</h1>
+							<h3>Pour Inscrire un Nouveau Eleve clicquer sur Continuer ou Annuler pour quitter</h3>
+								<ul class="actions">
+									<li><a href="#galleries" class="button alt scrolly big">Continuer</a></li>
+									<li><a class="button alt scrolly big">Annuler</a></li>
+
+								</ul>
+							</div>
+						</section>
+
+					<!-- Gallery -->
+						<section id="galleries">
+
+							<!-- Photo Galleries -->
+								<div class="gallery">
+
+									<div id="main">
+										<section class="wrapper style1">
+										<div class="inner">
+
+
+										<!-- Elements -->
+
+											<div class="row 200%">
+												<div class="6u 12u$(medium)">
+													<h2>Formulaire pour Inscrire un Eleve</h2>
+
+										<hr class="major" />
+									</br>
+
+										<!-- Form -->
+
+<div class="container col-md-6 col-xs-10 col-md-offset-4 spacer">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1>Inscrire un eleve</h1></div>
+		<div class="panel-body"> 
+			
+			<form th:action="@{saveInscription}" class="col-lg-18" method="post" th:object="${inscription}" enctype="multipart/form-data">
+			
+				<div class="form-group">
+					<label class="control-labe">Matricule:</label>
+					<input type="text" th:field="*{matricule}" class="form-control">
+					<span class="text-danger" th:errors="*{matricule}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Matricule Eleve:</label>
+					<input type="text" th:field="*{eleve.matricule}" class="form-control">
+					<span class="text-danger" th:errors="*{eleve.matricule}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Nom:</label>
+					<input type="text" th:field="*{eleve.nom}" class="form-control">
+					<span th:errors="*{eleve.nom}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Prenom:</label>
+					<input type="text" th:field="*{eleve.prenom}" class="form-control">
+					<span th:errors="*{eleve.prenom}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Genre:</label>
+					<input type="text" th:field="*{eleve.genre}" class="form-control">
+					<span th:errors="*{eleve.genre}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Adresse:</label>
+					<input type="text" th:field="*{eleve.adresse}" class="form-control">
+					<span th:errors="*{eleve.adresse}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Age:</label>
+					<input type="number" th:field="*{eleve.age}" class="form-control">
+					<span th:errors="*{eleve.age}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Classe:</label>
+					<input type="text" th:field="*{eleve.classe}" class="form-control">
+					<span th:errors="*{eleve.classe}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Frais d'Inscription:</label>
+					<input type="text" th:field="*{frais}" class="form-control">
+					<span th:errors="*{frais}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Date:</label>
+					<input type="date" th:field="*{date}" class="form-control">
+					<span th:errors="*{date}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Annee Scolaire:</label>
+					<input type="text" th:field="*{annee}" class="form-control">
+					<span th:errors="*{annee}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-labe">Photo:</label>
+					<input type="file" name="photo" class="form-control">
+					
+				</div>
+				
+				<div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+								
+
+								</div>
+								
+								
+						</section>
+
+					<!-- Contact -->
+
+		</div>
+
+		<!-- Scripts
+
+		-->
+		
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		  <script src="assets/js/jquery.poptrox.min.js"></script>
+
+
+
+
+
+
+	</body>
+</html>

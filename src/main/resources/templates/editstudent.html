@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Enregistrer Eleve </title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+         <link rel="stylesheet" th:href="@{/css/custom.css}"/>
+          <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+    </head>
+	<body>
+	
+		<div>
+ 	<h1>Enregistrer Eleve</h1>
+ 	
+	     <form action="#" th:action="@{/editsave}" th:object="${eleve}" method="post">
+	     <input type="hidden"  th:value="${idEleve}"  th:field="*{idEleve}" />
+	     <table>
+	     <tr>
+			<td width="10%">Matricule :</td>
+				
+			<td width="90%" align="left"><input type="text" th:field="*{matricule}" /></td>
+								
+		</tr>
+		
+		
+		<tr>
+			<td>Nom : 	</td>
+				
+			<td><input type="text" th:field="*{nom}" /></td>
+									
+		</tr>
+		
+		
+		<tr>
+			<td>Prenom : 	</td>
+				
+			<td><input type="text" th:field="*{prenom}" /></td>
+									
+		</tr>
+	
+		
+		<tr>
+			<td>Classe :	</td>
+				
+			<td>
+			 <select th:field="*{classe}">
+	    	          <option th:each="classe : ${classes}" th:value="${classe}" th:text="${classe}">Classe</option>
+	    	       </select>
+                  </td>
+									
+		</tr>
+		
+		
+		<tr>
+			<td> Age :	</td>
+				
+			<td>     <input type="number" th:field="*{age}" /></td>
+									
+		</tr>
+		
+
+		<tr>
+		<td>	</td>
+		<td >
+	              <input type="submit" value="Modifier"/> 
+	              
+	            </td>
+	        </tr>
+	        
+		</table>
+		
+		
+	    
+	     </form>
+	     </div>
+	</body>
+</html>

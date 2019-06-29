@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<!--
+	Broadcast by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Elements - Broadcast by TEMPLATED</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<title> :: Page d'Acces :: </title>
+	</head>
+	<body>
+	 <div class="probootstrap-header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
+              <span><i class="icon-location2"></i>Yaounde, Centre 10036, Cameroun</span>
+              <span><i class="icon-phone2"></i>+237 651420937</span>
+              <span><i class="icon-mail"></i>info@lakadez.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ <!-- <h1 style="color:#002F2F;" >Systeme de gestion des Etablissements Scholaire</h1> -->
+    <div class="probootstrap-page-wrapper">
+      <!-- Fixed navbar -->
+     
+
+				<section id="main">
+
+							<section id="banner">
+							
+								<div class="inner">
+									
+									
+									
+								
+									
+									
+									<h2>Page d'Acces</h2>      
+	<!-- <p style="color: red;">${errorString}</p>  -->       
+	<form name='f' th:action="@{/j_spring_security_check}" method='POST'>     
+	
+	
+		<table >            
+			<tr>               
+			             
+				<td ><input type="text" name='username'  value='' placeholder="Nom d'Utilisateur" /> </td>            
+			</tr>            
+			<tr>               
+			             
+				<td class="tblInscris"><input type="password" name='password'  value= '' placeholder="Mot de Passe"/> 
+				</td>            
+			</tr>            
+			      
+			<tr>               
+				<td class="tblInscris" colspan ="2">                  
+				
+				<input type="submit" value="Acceder" />
+				          
+				
+				</td>            
+			</tr>         
+		</table>      
+	</form>      
+						
+		</div>	
+		<div style="coler:red">
+				<span><i class="icon-login"></i>Login: khalil <br/></span>
+		
+                <span><i class="icon-login"></i>Password: 123 </span>
+		</div>						  					
+			</div>							
+
+
+	</body>
+</html>

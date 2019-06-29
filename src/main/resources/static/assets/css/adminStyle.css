@@ -1,0 +1,109 @@
+
+
+body{
+  font: 1.5, 15px, Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #c0c2c4;
+  background: #EACFB8;
+}
+
+
+
+/* Banner */
+
+	body.is-loading #banner > .inner {
+		opacity: 0;
+		-moz-transform: translateY(1em);
+		-webkit-transform: translateY(1em);
+		-ms-transform: translateY(1em);
+		transform: translateY(1em);
+	}
+
+	#banner {
+		display: -ms-flexbox;
+		-ms-flex-pack: center;
+		-ms-flex-align: center;
+		padding: 8em 0 6em 0;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		min-height: 75vh;
+		height: 75vh;
+		position: relative;
+		background: #000;
+		background-image: url('../image/bg-01.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: center;
+		color: #FFF;
+	}
+
+		#banner:before {
+			-moz-transition: opacity 3s ease;
+			-webkit-transition: opacity 3s ease;
+			-ms-transition: opacity 3s ease;
+			transition: opacity 3s ease;
+			-moz-transition-delay: 0.25s;
+			-webkit-transition-delay: 0.25s;
+			-ms-transition-delay: 0.25s;
+			transition-delay: 0.25s;
+			content: '';
+			display: block;
+			background-color: #000;
+			height: 100%;
+			left: 0;
+			opacity: 0.65;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		#banner .inner {
+			-moz-transform: none;
+			-webkit-transform: none;
+			-ms-transform: none;
+			transform: none;
+			-moz-transition: opacity 1s ease, transform 1s ease;
+			-webkit-transition: opacity 1s ease, transform 1s ease;
+			-ms-transition: opacity 1s ease, transform 1s ease;
+			transition: opacity 1s ease, transform 1s ease;
+			position: relative;
+			opacity: 3;
+			z-index: 3;
+			padding: 0 2em;
+		}
+			
+			
+	/*****************************************************************************************/
+	
+	body, input {
+		font-family: "Signika", sans-serif;
+		font-size: 15pt;
+		font-weight: 300;
+		line-height: 1.65;
+	}
+
+	
+
+
+	hr {
+		border: 0;
+		border-bottom: solid 2px;
+		margin: em 0;
+		border-bottom-color: red;
+	}
+
+	

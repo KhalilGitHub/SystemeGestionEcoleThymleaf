@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+	Broadcast by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+		<title>Snapshot by TEMPLATED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<title> :: Liste de tous les Eleves :: </title>
+	</head>
+<body>
+	<jsp:include page="menu.jsp"></jsp:include>
+		<section id="main">
+		
+		
+			<section id="banner">
+				<div class="inner">
+					<h1>Systeme de gestion des Etablissements Scolaire</h1>
+					<h2>Pour Lister les details de tous les notes clicquer sur Continuer ou Annuler pour quitter</h2>
+					<ul class="actions">
+						<li ><a id="li" href="#galleries" class="button alt scrolly big">Continuer</a></li>
+						<li><a id="li" class="button alt scrolly big">Annuler</a></li>
+					</ul>
+				</div>
+			</section>				
+
+								
+				<section id="galleries">			
+					<div class="gallery">				
+						<div id="main">
+							<section class="wrapper style1">			
+										
+								<h2 class="tittreModif">Liste des tous Notes</h2> 
+																
+							    
+	<p style="color: red;">${errorString}</p>     
+<table class="lstTable" >       
+	<tr>  
+	
+	
+	
+		<th>Matricule</th>	
+		<th>Nom</th>
+		<th>Prenom</th>
+		<td>Nom d'Utilisateur</td>
+		<th>Niveau d'Acces</th>
+		<th>Genre</th>		
+		<th>Date</th>   
+		<th>Email</th>       
+        <th>Etat</th>
+
+		 
+	</tr>   
+	<tr th:each="user : ${list}">             
+		<td th:text=${user.matricule}></td> 
+		<td th:text=${user.firstName}></td>             
+		<td th:text=${user.lastName}></td>
+		<td th:text=${user.userName}></td>
+		<td th:text=${user.userId}  ></td>  
+		<td th:text=${user.gender}  ></td>             
+		<td th:text=${user.date}    ></td>
+		<td th:text=${user.email}   ></td>
+		<td th:text=${user.enabled} ></td> 
+	</tr>       
+		  
+	</table>     				
+					<a class="link" href="#" >Debut de la Page</a> 							
+								<!--  <hr class="list"/>-->	
+							</section>		
+						</div>			
+					</div>				
+				</section>				
+								
+			</section>					
+										
+	
+
+		<!-- Scripts
+
+		-->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		  <script src="assets/js/jquery.poptrox.min.js"></script>
+
+
+
+
+
+
+	</body>
+</html>

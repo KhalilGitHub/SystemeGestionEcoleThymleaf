@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>List des eleves inscrits</title>
+	<link rel="stylesheet" href="assets/cssDisp/bootstrap.min.css" th:href="@{/cssDisp/bootstrap.min.css}" />
+	<link rel="stylesheet" href="assets/cssDisp/mystyle.css" th:href="@{/cssDisp/mystyle.css}" />
+</head>
+<body>
+
+	 <h4><th:block th:include="/menuAdmin"></th:block> </h4>
+
+	<h1>Liste de tous les Eleves inscrits</h1>
+	
+	<div class="container spacer">
+	<form th:action="@{find}" method="get">
+	<div class="form-group" >
+	<label>Matricule:</label>
+	<input type="text" name="matricule" th:value=${motCle} class="form-control">
+	<button type="submit">Chercher</button>
+	</div>
+	</form>
+	</div>
+	
+	
+	
+	<div class="container">
+		<table class="table table-striped">
+		<thead>
+		<tr>
+		<th colspan=2>Mat</th> <th colspan=2>Nom</th> <th colspan=2>Prenom</th> <th colspan=2>Genre</th> <th colspan=2>Adresse</th> <th colspan=2>Age</th> 
+		<th colspan=2>Classe</th> <th colspan=2>Frais</th> <th colspan=2>Date</th> <th colspan=2>Anne</th> <th colspan=2>Photo</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<!--<tr th:each="i:${inscrip}">-->
+		
+		<tr th:each="i:${pageInscrip.content}">
+		
+		<td th:text="${i.matricule}"><td>
+		<td th:text="${i.eleve.nom}"><td>
+		<td th:text="${i.eleve.prenom}"><td>
+		<td th:text="${i.eleve.genre}"><td>
+		<td th:text="${i.eleve.adresse}"><td>
+		<td th:text="${i.eleve.age}"><td>
+		<td th:text="${i.eleve.classe}"><td>
+		<td th:text="${i.frais}"><td>
+		<td th:text="${i.date}"><td>
+		<td th:text="${i.annee}"><td>
+		
+		<td><img class="img-circle" th:src="@{getPhoto(id=${i.idInscription})}" width="50px" height="50px"/></td>
+				
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	
+	<div class="container">
+	<ul class="nav navbar-nav">
+	<li th:each="p:${pages}" th:class="${p==pagesCourante}?active:''">
+	<a th:text="${p}" th:href="@{index(page=${p}, motCle=${motCle})}"></a>
+	</li>
+	</ul>
+	</div>
+	
+</body>
+
+</html>
+
