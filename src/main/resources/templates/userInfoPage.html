@@ -15,7 +15,26 @@
 	<body class="subpage">
 	
 	 <!-- Include _menu.html -->
-	 <h4><th:block th:include="/menu"></th:block> </h4>
+	 <h4>
+	 	 <div 
+     style="border: 1px solid #ccc;padding:5px;margin-bottom:20px;" >
+ 
+  <a th:href="@{/}">Home</a>
+ 
+     | &nbsp;
+  
+   <a th:href="@{/userInfo}">User Info</a>
+  
+     | &nbsp;
+  
+   <a th:href="@{/admin}">Admin</a>
+    
+     | &nbsp;
+      
+   <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a>
+  
+</div>
+	 </h4>
       				
 		<!-- Main -->
 		<section id="banner">
